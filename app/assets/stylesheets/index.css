@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+}
+
+.record_page_h {
+  background-color: #1d4119;
+  width: 50vw;
+  height: 20vh;
+}
+
+.record_page {
+  background-color: #295e24;
+  width: 50vw;
+  height: 100vh;
+}
+
+.profile_page_h {
+  background-color: #292e0e;
+  width: calc(100vw - 50vw);
+  height: 30vh;
+}
+
+.profile_page {
+  background-color: #63702b;
+  width: calc(100vw - 50vw);
+  height: 100vh;
+}
