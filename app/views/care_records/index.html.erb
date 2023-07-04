@@ -1,21 +1,42 @@
-<div class="wrapper">
 
-  <div class = "record_page">
+<div class= "wrapper">
+  
+  <div class = "header">
 
-    <div class = "record_page_h">
-      <%= render "record_header" %>
+    <div class = "account">
+      <a href = "#">職員名</a>
     </div>
-    
-    <%= render "record_main" %>
+    <div class = "roll">
+      <a href = "#">利用者名簿</a>
+    </div>
+    <div class = "enroll">
+      <a href = "#">利用者登録</a>
+    </div>
+    <div class = "vault">
+      <a href = "#">保管庫</a>
+    </div>
+
   </div>
 
-  <div class = "profile_page">
-    
-    <div class = profile_page_h>
-      <%= render "profile_header" %>
+  <div class = "body">
+
+    <div class = "record-page">
+
+      <%= render "record_header" %>
+
+      <%= render "record_main" %>
+
     </div>
 
-    <%= render "profile_main" %>
+    <div class = "profile-page">
+    
+      <div class = profile-page-h>
+        <%= render "profile_header" %>
+      </div>
+      <%= render "profile_main" %>
+
+    </div>
+
   </div>
 
 </div>

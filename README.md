@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
+| Column              | Type    | Options                   |
+| ------------------- | ------- | ------------------------- |
+| name                | string  | null: false               |
+| email               | string  | null: false               |
+| password            | string  | null: false               |
+| phone               | string  | null: false               |
+### Association
+- has_many :records
+- has_many :profiles
 
-Things you may want to cover:
+## records table
+| Column              | Type        | Options                   |
+| ------------------- | ----------- | ------------------------- |
+| date                | date        | null: false               |
+| text                | text        | null: false               |
+| category_id         | integer     | null: false               |
+| user                | references  | null: false, foreign_key  |
+### Association
+- belong_to :user
+- belong_to :profile
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## profiles table
+| Column              | Type        | Options                   |
+| ------------------- | ----------- | ------------------------- |
+| name                | string      | null: false               |
+| barth               | date        | null: false               |
+| gender_id           | integer     | null: false               |
+| work                | string      | null: false               |
+| family              | string      | null: false               |
+| phone               | string      | null: false               |
+| user                | references  | null: false, foreign_key  |
+| record              | references  | null: false, foreign_key  |
+### Association
+- belong_to :user
+- has_many :records
+- has_one_attached :image
