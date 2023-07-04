@@ -1,0 +1,58 @@
+/*menu*/
+.header{
+  background-color: #5a7457;
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+.header a{
+  font-size: 16px;
+  color: #FAFAFA;
+  text-decoration: none;
+  padding: 14px;
+}
+/*front*/
+.body{
+  display: flex;
+}
+/*record-page*/
+/*record-header*/
+.record-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #51854b;
+  width: 50vw;
+  height: 20vh;
+  text-align: center;
+}
+.record-form a{
+  font-size: 16px;
+  color: #FAFAFA;
+  padding: 5px;
+}
+.form-text {
+  height: 80px;
+  width: 500px;
+}
+/*record-main*/
+.record-main {
+  background-color: #295e24;
+  width: 50vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.profile-page-h {
+  background-color: #292e0e;
+  width: calc(100vw - 50vw);
+  height: 30vh;
+}
+
+.profile-page {
+  background-color: #63702b;
+  width: calc(100vw - 50vw);
+  height: 100vh;
+}

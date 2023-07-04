@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   
-  root 'care_record#index'
+  root 'care_records#index'
   
 end
