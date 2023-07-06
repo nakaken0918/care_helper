@@ -1,0 +1,26 @@
+<h2>職員登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <a>氏名を入力</a>
+  <div class="field">
+    <%= f.text_area :name, class:"input-default", id:"name", placeholder:"例) 猫田太郎", maxlength:"40" %>
+  </div>
+
+  <div class="field">
+    <a>パスワードを入力</a><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <a>パスワードを入力（確認）</a><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

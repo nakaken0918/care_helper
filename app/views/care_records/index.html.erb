@@ -4,7 +4,12 @@
   <div class = "header">
 
     <div class = "account">
-      <a href = "#">職員名</a>
+      <% if user_signed_in? %><%# 条件分岐（ログインしている場合 %>
+        <%= link_to '職員名', root_path %>
+      <% else %><%# //条件分岐（ログインしていない場合 %>
+        <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+        <%= link_to "職員登録", new_user_registration_path, class: "sign-up" %>
+      <% end %>
     </div>
     <div class = "roll">
       <a href = "#">利用者名簿</a>
@@ -13,7 +18,7 @@
       <a href = "#">利用者登録</a>
     </div>
     <div class = "vault">
-      <a href = "#">保管庫</a>
+      <a href = "#">記録保管庫</a>
     </div>
 
   </div>
@@ -22,8 +27,12 @@
 
     <div class = "record-page">
 
+      <%= render "patient_sort" %>
+      <%#
       <%= render "record_header" %>
-
+      
+      <%= render "patient_list"%>
+      <%#
       <%= render "record_main" %>
 
     </div>
