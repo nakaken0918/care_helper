@@ -39,10 +39,21 @@
 }
 /*record-main*/
 .record-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #295e24;
   width: 50vw;
   height: 100vh;
   overflow: scroll;
+}
+.record-main a{
+  font-size: 16px;
+  color: #FAFAFA;
+  text-decoration: none;
+}
+.patient-name{
+  padding: 10px 20px;
 }
 
 .profile-page-h {
