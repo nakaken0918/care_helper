@@ -12,6 +12,17 @@
   text-decoration: none;
   padding: 14px;
 }
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-birth{
+  display: flex;
+}
+.input-contact{
+  display: flex;
+}
 /*front*/
 .body{
   display: flex;
