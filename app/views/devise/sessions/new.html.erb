@@ -1,3 +1,4 @@
+<div class = form>
 <h2>ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -16,5 +17,8 @@
     <%= f.submit "ログイン" %>
   </div>
 <% end %>
+<div class="field">
+  <%= link_to 'Top', root_path, class:"back-btn" %>
+</div>
 
-<%= render "devise/shared/links" %>
+</div>

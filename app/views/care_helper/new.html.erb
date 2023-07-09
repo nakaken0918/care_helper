@@ -1,0 +1,116 @@
+<div class = "form">
+<h2>利用者登録</h2>
+<%= form_with model: @profile, url: root_path, local: true do |f| %>
+
+  <div class="img-upload">
+    <div class="weight-bold-text">
+      <a>顔写真</a>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <a>氏名</a><br>
+    <%= f.text_area :patient, class:"partient", id:"partient", placeholder:"例）猫田三郎" %>
+  </div>
+
+  <div class="field">
+    <a>生年月日</a>
+    <div class='input-birth'>
+      <%= raw sprintf(
+        f.date_select(
+        :birth,
+        class:'select-birth',
+        id:"birth-date",
+        use_month_numbers: true,
+        prompt:'--',
+        start_year: 1920,
+        end_year: (Time.now.year - 5),
+        date_separator: '%s'),
+        "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>"
+      %>
+    </div>
+  </div>
+
+  <div class="field">
+    <a>性別</a><br>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"gender"}) %>
+  </div>
+
+  <div class="field">
+    <a>血液型</a><br>
+    <%= f.text_area :blood_type, class:"blood-type", id:"blood-type", placeholder:"例）Ｂ" %>
+  </div>
+
+  <div class="field">
+    <a>職業</a><br>
+    <%= f.text_area :work, class:"work", id:"work", placeholder:"例）会社員" %>
+  </div>
+
+  <div class="field">
+    <a>家族構成</a><br>
+    <%= f.text_area :family, class:"family", id:"partient", placeholder:"例）妻、長男夫婦、長女、次男" %>
+  </div>
+
+  <%# 連絡先の氏名、関係、住所、メール、電話番号などを登録 %>
+  <a>連絡先１</a>
+  <div class='input-contact'>
+    <div class="field">
+      <a>氏名</a><br>
+      <%= f.text_area :person, class:"person", id:"person", placeholder:"例）猫田太郎" %>
+    </div>
+    <div class="field">
+      <a>関係</a><br>
+      <%= f.text_area :relationship, class:"relationship", id:"relationship", placeholder:"例）長男" %>
+    </div>
+    <div class="field">
+      <a>住所</a><br>
+      <%= f.text_area :address, class:"address", id:"address", placeholder:"例）猫ノ山22-22" %>
+    </div>
+    <div class="field">
+      <a>メール</a><br>
+      <%= f.text_area :email, class:"email", id:"email", placeholder:"例）neconeco@test.com" %>
+    </div>
+    <div class="field">
+      <a>電話番号</a><br>
+      <%= f.text_area :phone, class:"phone", id:"phone", placeholder:"例）222-2222-2222" %>
+    </div>
+  </div>
+
+  <a>連絡先２</a>
+  <div class='input-contact'>
+    <div class="field">
+      <a>氏名</a><br>
+      <%= f.text_area :person, class:"person", id:"person", placeholder:"例）猫田花子" %>
+    </div>
+    <div class="field">
+      <a>関係</a><br>
+      <%= f.text_area :relationship, class:"relationship", id:"relationship", placeholder:"例）長女" %>
+    </div>
+    <div class="field">
+      <a>住所</a><br>
+      <%= f.text_area :address, class:"address", id:"address", placeholder:"例）猫ノ谷2-2" %>
+    </div>
+    <div class="field">
+      <a>メール</a><br>
+      <%= f.text_area :email, class:"email", id:"email", placeholder:"例）nyanda@test.com" %>
+    </div>
+    <div class="field">
+      <a>電話番号</a><br>
+      <%= f.text_area :phone, class:"phone", id:"phone", placeholder:"例）222-2222-2222" %>
+    </div>
+    
+  </div>
+  <div class="field">
+    <%= f.submit "登録する" ,class:"sabmit-btn" %>
+  </div>
+  <div class="field">
+    <%= link_to 'Top', root_path, class:"back-btn" %>
+  </div>
+<% end %>
+</div>
